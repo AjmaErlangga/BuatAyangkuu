@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akses Link Terbatas</title>
+    <script>
+        const accessDate = new Date(2025, 1, 18, 9, 0); // 18 Februari 2025, 09:00
+        const expiryDate = new Date(2025, 1, 18, 17, 0); // 18 Februari 2025, 17:00
+
+        function checkAccess() {
+            const now = new Date();
+            
+            if (now >= accessDate && now <= expiryDate) {
+                window.location.href = "https://AjmaErlangga.github.io/my-website/"; // Ganti dengan URL yang ingin diakses
+            } else {
+                alert("Maaf, akses hanya tersedia pada 18 Februari 2025 antara 09:00 hingga 17:00.");
+            }
+        }
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = accessDate - now;
+            
+            if (timeDifference > 0) {
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+                
+                document.getElementById("countdown").innerHTML = `Akses tersedia dalam: ${days} hari, ${hours} jam, ${minutes} menit, ${seconds} detik`;
+            } else {
+                document.getElementById("countdown").innerHTML = "Akses sudah tersedia!";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</head>
+<body>
+    <h2>Akses Link Terbatas</h2>
+    <p id="countdown">Menghitung waktu...</p>
+    <p>Klik tombol di bawah untuk mengakses tautan jika dalam rentang waktu yang diperbolehkan.</p>
+    <button onclick="checkAccess()">Akses Link</button>
+</body>
+</html>
