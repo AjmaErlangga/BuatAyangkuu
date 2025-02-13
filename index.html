@@ -48,14 +48,14 @@
         }
     </style>
     <script>
-        const accessDate = new Date(2025, 1, 13, 0, 0); // 18 Februari 2025, 00:00
-        const expiryDate = new Date(2025, 1, 18, 19, 37); // 18 Februari 2025, 23:59
+        const accessDate = new Date(2025, 1, 13, 19, 42); // 18 Februari 2025, 00:00
+        const expiryDate = new Date(2025, 1, 13, 19, 46); // 18 Februari 2025, 23:59
 
         function checkAccess() {
             const now = new Date();
             
             if (now >= accessDate && now <= expiryDate) {
-                window.location.href = "https://ajmaerlangga.github.io/my-website/"; // Ganti dengan URL yang ingin diakses
+                window.location.href = "https://ajmaerlangga.github.io/BuatAyangkuu/Script.html"; // Ganti dengan URL yang ingin diakses
             } else {
                 alert("Di tunggu ya ayangkuu🥰, link nya tersedia tgl 18 nanti😘");
             }
