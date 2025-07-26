@@ -123,7 +123,10 @@
         if (p.y > canvas.height) confetti[i] = { x:Math.random()*canvas.width, y:-10, size:p.size, angle:p.angle, speed:p.speed, color:p.color };
       });
       ctx.clearRect(0,0,canvas.width,canvas.height);
-      confetti.forEach(p => ctx.fillRect(p.x,p.y,p.size,p.size*0.4));
+      confetti.forEach(p => {
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x, p.y, p.size, p.size*0.4);
+      });
       anim = requestAnimationFrame(draw);
     }
     function stopConfetti() { cancelAnimationFrame(anim); anim = null; ctx.clearRect(0,0,canvas.width,canvas.height); }
