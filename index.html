@@ -10,94 +10,94 @@
       background: url('https://ajmaerlangga.github.io/BuatAyangkuu/ULTAH_BG.jpg') center/cover no-repeat;
       display:flex; align-items:center; justify-content:center; overflow:hidden;
     }
+    body::before { content: ''; position: fixed; top: 0; left: 0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:5; }
     #confetti-canvas { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:10; }
     .heart { position:fixed; top:-50px; font-size:24px; opacity:0.8; animation:fall-love linear infinite; pointer-events:none; z-index:11; }
     @keyframes fall-love { to { transform: translateY(110vh) rotate(360deg); opacity:0; } }
     .btn-animated { transition:transform 0.3s ease, box-shadow 0.3s ease; animation:pulse 2s infinite; }
     @keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.1); } }
     .btn-animated:hover { animation:none; transform:scale(1.2) rotate(-2deg); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
-    .typewriter { background:rgba(0,0,0,0.5); padding:1rem; border-radius:0.5rem; color:#fff; font-size:1rem; line-height:1.5; white-space:pre-wrap; overflow:hidden; position:relative; }
+    .typewriter { background: rgba(255,255,255,0.5); padding:1rem; border-radius:0.75rem; color:#000; font-size:1rem; line-height:1.6; text-align:center; position:relative; z-index:20; }
+    .typewriter-content { max-height:40vh; overflow-y:auto; padding-right:0.5rem; }
+    .typewriter-content p { margin-bottom:1rem; opacity:0; }
+    .typewriter-content::-webkit-scrollbar { width:6px; }
+    .typewriter-content::-webkit-scrollbar-track { background:rgba(255,255,255,0.1); border-radius:3px; }
+    .typewriter-content::-webkit-scrollbar-thumb { background:rgba(0,0,0,0.3); border-radius:3px; }
     .fade-in { opacity:0; animation:fadeIn 1s forwards; }
     @keyframes fadeIn { to { opacity:1; } }
     .watermark { position:fixed; bottom:8px; right:12px; font-size:10px; color:rgba(255,255,255,0.6); z-index:30; }
-    .pulse-love-icon { position:absolute; bottom:12px; right:12px; font-size:24px; color:#F472B6; animation:pulse 1.5s infinite; }
+    .pulse-love-icon { position:absolute; bottom:12px; right:12px; font-size:24px; color:#F472B6; animation:pulse 1.5s infinite; z-index:20; }
   </style>
 </head>
 <body>
   <canvas id="confetti-canvas"></canvas>
   <audio id="bg-music" src="https://ajmaerlangga.github.io/BuatAyangkuu/SOUND_CintaLuarBiasa.mp3" playsinline loop></audio>
-
   <div class="watermark">© Ajma Erlangga</div>
-
-  <div id="slider" class="w-full max-w-md p-6 relative z-20 text-center">
+  <div id="slider" class="w-full max-w-md p-4 relative z-20 text-center">
     <div id="slide-1" class="slide">
-      <div class="mb-8"><img src="https://ajmaerlangga.github.io/BuatAyangkuu/bunga.gif" class="mx-auto w-24 h-24" alt="Animasi"/></div>
-      <button id="to-2" class="btn-animated mx-auto flex items-center justify-center w-16 h-16 bg-white rounded-full">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
+      <div class="mb-6"><img src="https://ajmaerlangga.github.io/BuatAyangkuu/bunga.gif" class="mx-auto w-20 h-20" alt=""/></div>
+      <button id="to-2" class="btn-animated mx-auto flex items-center justify-center w-14 h-14 bg-white rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
       </button>
-      <p class="mt-4 text-sm text-white">Sentuh LOVEnya!</p>
+      <p class="mt-2 text-sm text-white">Sentuh LOVEnya!</p>
     </div>
 
     <div id="slide-2" class="slide hidden">
-      <h2 class="fade-in text-2xl font-extrabold text-white mb-6">Selamat ulang tahun yang ke-22 Sayangkuu🥳🎉</h2>
-      <button id="to-3" class="btn-animated mx-auto mt-4 px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-full shadow-lg flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <h2 class="fade-in text-2xl font-extrabold text-white mb-4">Selamat ulang tahun yang ke-22 Sayangkuu🥳🎉</h2>
+      <button id="to-3" class="btn-animated mx-auto mt-3 px-7 py-2 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-full flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         Klik lagi
       </button>
     </div>
 
     <div id="slide-3" class="slide hidden relative">
-      <div class="typewriter fade-in mx-auto text-left border-2 border-pink-300 bg-white bg-opacity-20 p-4 rounded">
-        <h2 class="text-xl font-semibold text-pink-100 mb-2">Hai Sayangku tercinta❤️</h2>
-        <p id="typewriter" data-text="Selamat ulang tahun sayangku yang begitu anggun dan menakjubkan🥰. Di usia ini, kamu semakin bersinar dengan segala kelebihan yang kamu miliki dengan hati yang lembut, pikiran yang bijak, dan senyum yang selalu mampu menenangkan dunia di sekitarmu. Kamu adalah sosok yang luar biasa🩷, dan hari ini adalah momen yang tepat untuk merayakan dirimu sepenuhnya🥰.
-
-Setiap hari kamu tumbuh menjadi pribadi yang semakin menginspirasi😘. Ada ketenangan dalam caramu bersikap💕, ada ketegasan dalam pilihanmu, dan ada keindahan dalam setiap hal kecil yang kamu lakukan🥰. Di usia baru ini, semoga kamu menemukan lebih banyak alasan untuk bahagia, Di permudah segala hal, lebih di lancarkan rezekinya dan lebih banyak keberanian untuk mewujudkan semua impianmu sayangg💕💘.
-
-Kamu adalah seseorang yang pantas dicintai dengan sepenuh hati❤ bukan hanya karena siapa dirimu hari ini, tapi juga karena siapa kamu telah menjadi. Di dunia ini mungkin banyak hal yang indah, tapi tak ada yang lebih indah daripada melihatmu tumbuh, bahagia, dan dicintai sepenuhnya, setiap harinya🥰🩷."></p>
+      <div class="typewriter fade-in mx-auto">
+        <h2 class="text-xl font-semibold text-black mb-4">Hai Sayangku tercinta ❤️</h2>
+        <div class="typewriter-content">
+          <p id="para1" data-text="Selamat ulang tahun sayangku yang begitu anggun dan menakjubkan🥰. Di usia ini, kamu semakin bersinar dengan segala kelebihan yang kamu miliki dengan hati yang lembut, pikiran yang bijak, dan senyum yang selalu mampu menenangkan dunia di sekitarmu."></p>
+          <p id="para2" data-text="Kamu adalah sosok yang luar biasa🩷, dan hari ini adalah momen yang tepat untuk merayakan dirimu sepenuhnya🥰. Setiap hari kamu tumbuh menjadi pribadi yang semakin menginspirasi😘. Ada ketenangan dalam caramu bersikap💕, ada ketegasan dalam pilihanmu, dan ada keindahan dalam setiap hal kecil yang kamu lakukan🥰."></p>
+          <p id="para3" data-text="Di usia baru ini, semoga kamu menemukan lebih banyak alasan untuk bahagia, dipermudah segala hal, dilancarkan rezekinya, dan diberikan keberanian untuk mewujudkan semua impianmu sayang💕💘."></p>
+        </div>
       </div>
       <div class="pulse-love-icon">❤️</div>
     </div>
   </div>
 
   <script>
-    const bgMusic = document.getElementById('bg-music');
     const slides = document.querySelectorAll('.slide');
-
-    document.getElementById('to-2').addEventListener('click', () => {
-      bgMusic.play().catch(e => console.warn('Play blocked', e));
-      showSlide(1);
-    });
-    document.getElementById('to-3').addEventListener('click', () => showSlide(2));
-
-    function showSlide(idx) {
-      slides.forEach((sl, i) => sl.classList.toggle('hidden', i !== idx));
-      if (idx === 2) { startConfetti(); startTyping(); startHearts(); }
-      else { stopConfetti(); }
-      slides[idx].querySelectorAll('.fade-in').forEach(el => el.classList.add('fade-in'));
+    const bgMusic = document.getElementById('bg-music');
+    document.getElementById('to-2').onclick = () => { bgMusic.play().catch(() => {}); showSlide(1); };
+    document.getElementById('to-3').onclick = () => showSlide(2);
+    function showSlide(i) {
+      slides.forEach((s, idx) => s.classList.toggle('hidden', idx!==i));
+      if (i===1) {
+        stopConfetti();
+      } else if (i===2) {
+        startConfetti();
+        animateParas();
+        startHearts();
+      } else {
+        stopConfetti();
+      }
     }
-
-    function startTyping() {
-      const el = document.getElementById('typewriter');
-      const full = el.dataset.text;
-      el.textContent = '';
-      let i = 0;
-      const timer = setInterval(() => { el.textContent += full.charAt(i); i++; if (i === full.length) clearInterval(timer); }, 50);
+    function animateParas() {
+      ['para1','para2','para3'].reduce((p, id) => p.then(() => typeParagraph(id)), Promise.resolve());
     }
-
-    const canvas = document.getElementById('confetti-canvas'); const ctx = canvas.getContext('2d'); let confettiParticles = [], confettiId;
-    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-    window.addEventListener('resize', resizeCanvas); resizeCanvas();
-    function createParticle() { return { x: Math.random()*canvas.width, y: -10, size: Math.random()*6+4, speed: Math.random()*0.5+0.5, angle: Math.random()*Math.PI*2, color: `hsl(${Math.random()*360},70%,60%)` }; }
-    function updateParticles() { confettiParticles.forEach((p,i) => { p.y+=p.speed; p.x+=Math.cos(p.angle)*0.5; p.angle+=0.005; if(p.y>canvas.height) confettiParticles[i]=createParticle(); }); }
-    function drawParticles() { ctx.clearRect(0,0,canvas.width,canvas.height); confettiParticles.forEach(p => { ctx.fillStyle = p.color; ctx.fillRect(p.x,p.y,p.size,p.size*0.4); }); }
-    function loop() { updateParticles(); drawParticles(); confettiId = requestAnimationFrame(loop); }
-    function startConfetti() { confettiParticles = Array.from({length:100}, createParticle); if (!confettiId) loop(); }
-    function stopConfetti() { cancelAnimationFrame(confettiId); confettiId = null; ctx.clearRect(0,0,canvas.width,canvas.height); }
-
-    let heartInterval;
+    function typeParagraph(id) {
+      return new Promise(res => {
+        const el = document.getElementById(id);
+        const text = el.dataset.text;
+        el.textContent = '';
+        el.style.opacity = 1;
+        let idx = 0;
+        const timer = setInterval(() => {
+          el.textContent += text.charAt(idx++);
+          if (idx >= text.length) { clearInterval(timer); setTimeout(res, 300); }
+        }, 50);
+      });
+    }
     function startHearts() {
-      const freq = window.innerWidth < 480 ? 2000 : 1000;
-      heartInterval = setInterval(() => {
+      setInterval(() => {
         const heart = document.createElement('div');
         heart.className = 'heart';
         heart.style.left = Math.random()*100 + 'vw';
@@ -106,9 +106,27 @@ Kamu adalah seseorang yang pantas dicintai dengan sepenuh hati❤ bukan hanya ka
         heart.textContent = '❤️';
         document.body.appendChild(heart);
         heart.addEventListener('animationend', () => heart.remove());
-      }, freq);
+      }, 1000);
     }
-
+    const canvas = document.getElementById('confetti-canvas'), ctx = canvas.getContext('2d'); let confetti = [], anim;
+    window.onresize = () => { canvas.width = innerWidth; canvas.height = innerHeight; };
+    window.onresize();
+    function startConfetti() {
+      confetti = Array.from({length:100}, () => ({ x:Math.random()*canvas.width, y:-10, size:Math.random()*6+4, angle:Math.random()*Math.PI*2, speed:Math.random()*0.5+0.5, color:`hsl(${Math.random()*360},70%,60%)` }));
+      if (!anim) draw();
+    }
+    function draw() {
+      confetti.forEach((p, i) => {
+        p.y += p.speed;
+        p.x += Math.cos(p.angle)*0.5;
+        p.angle += 0.005;
+        if (p.y > canvas.height) confetti[i] = { x:Math.random()*canvas.width, y:-10, size:p.size, angle:p.angle, speed:p.speed, color:p.color };
+      });
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      confetti.forEach(p => ctx.fillRect(p.x,p.y,p.size,p.size*0.4));
+      anim = requestAnimationFrame(draw);
+    }
+    function stopConfetti() { cancelAnimationFrame(anim); anim = null; ctx.clearRect(0,0,canvas.width,canvas.height); }
     showSlide(0);
   </script>
 </body>
